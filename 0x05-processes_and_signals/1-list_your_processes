@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script prints only the username of the current user
-echo "USER"
-whoami
+# This script displays the user running the current process
+printf "USER\n"
+printf "%s\n" "$(whoami)"
