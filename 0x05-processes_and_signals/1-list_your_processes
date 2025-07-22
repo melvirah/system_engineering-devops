@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
-# This script displays the user running the current process
-printf "USER\n"
-printf "%s\n" "$(whoami)"
+#!/bin/bash
+echo "USER"
+whoami
