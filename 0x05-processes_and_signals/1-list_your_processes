@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# List all running processes showing only user and command
+# Display only the user and the command of running processes
 
 ps -eo user,comm
