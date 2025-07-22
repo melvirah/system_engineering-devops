@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script displays all currently running processes, showing only the user for each
+# This script displays the usernames of users running processes
 
-ps -eo user
+ps -eo user --no-headers | sort | uniq | awk 'BEGIN { print "USER" } { print }'
 
