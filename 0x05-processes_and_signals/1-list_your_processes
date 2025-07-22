@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# This script lists all running processes in a user-friendly hierarchical format
+# This script lists running processes in a hierarchical format
 
 ps -eo user,etime,cmd --forest
+
 
