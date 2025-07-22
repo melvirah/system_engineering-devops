@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Script that prints the current process ID (PID)
-
-echo "$$"
