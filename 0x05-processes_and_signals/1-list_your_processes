@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Display only the users of currently running processes
-
 ps -eo user --no-headers | sort | uniq
