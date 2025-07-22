@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2009
+
+pid=$(ps -eo pid,cmd | grep "7-highlander" | grep -v grep | awk '{print $1}')
+
+if [ -n "$pid" ]; then
+  kill "$pid"
+fi
