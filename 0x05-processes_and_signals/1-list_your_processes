@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Display processes for the current user in expected format
+# Display all currently running processes
 
-ps -eo user,etime,cmd | grep "\+x && ./1-list_your_processes" | grep -v grep
+ps -eo user,cmd
 
