@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
-# This script lists files in the current directory, excluding hidden files,
-# and displays only the part of each filename after the first dash (-) using a for loop.
+# This script lists non-hidden files in the current directory, one per line.
+# If a file has a dash (-), only the part after the first dash is shown.
+# Otherwise, the full file name is shown.
 
-for file in *-*  # Match only files with at least one dash
+for file in *  # This matches all non-hidden files and folders
 do
-  # Exclude directories and hidden files
   if [ -f "$file" ]; then
-    echo "${file#*-}"
+    # Check if the file has a dash
+    if [[ "$file" == *-* ]]; then
+      echo "${file#*-}"  # Print only the part after the first dash
+    else
+      echo "$file"  # Print the full name
+    fi
   fi
 done
