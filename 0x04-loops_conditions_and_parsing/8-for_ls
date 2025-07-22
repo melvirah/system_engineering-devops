@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script lists files in the current directory, excluding hidden files,
+# and displays only the part of each filename after the first dash (-) using a for loop.
+
+for file in *-*  # Match only files with at least one dash
+do
+  # Exclude directories and hidden files
+  if [ -f "$file" ]; then
+    echo "${file#*-}"
+  fi
+done
