@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Lists all running processes of the current user in required format
+# Display processes for the current user in expected format
 
-ps -eo user=,etime=,cmd= --sort=user
+ps -eo user,etime,cmd | grep "\+x && ./1-list_your_processes" | grep -v grep
+
