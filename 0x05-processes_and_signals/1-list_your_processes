@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# This script prints the current user
-
+# This script prints only the username of the current user
 echo "USER"
 whoami
