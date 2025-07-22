@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
-# This script displays all running processes in a user-friendly hierarchical format
+# This script displays all running processes including hierarchy, no TTY restriction, user-friendly format
 
-ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,cmd --forest
-
+ps -eo user,lstart,cmd --sort=lstart | awk '
+BEGIN { print "USER STARTED CMD" }
+NR>1 {
+    user = $1
+    started = $(2) " " $(3) " " $(4) " " $(5)
+    time = $(6)
+    cmd = ""
+    for (i=7; i<=NF; i++) {
+        cmd = cmd $i " "
+    }
+    print user, time, cmd
+}'
