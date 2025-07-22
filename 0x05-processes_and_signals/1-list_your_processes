@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script displays the current user
+# This script prints the current user
 
 echo "USER"
 whoami
