@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# This script lists running processes with specific fields
+# Lists all running processes of the current user in required format
 
-ps -eo user,etime,cmd --forest
-
-
+ps -eo user=,etime=,cmd= --sort=user
