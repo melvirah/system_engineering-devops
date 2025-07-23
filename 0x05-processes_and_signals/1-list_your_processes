@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Displays all running processes including those without a TTY, in a user-friendly and hierarchical format.
+# Displays all running processes including those without a TTY, in a user-friendly hierarchical format.
 
-ps -axeo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
+ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
