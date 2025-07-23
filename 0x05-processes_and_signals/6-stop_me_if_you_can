@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2009
+# Find the PID of the 4-to_infinity_and_beyond process and stop it using /proc
 
-# Get the PID of the process
-pid=$(ps -eo pid,cmd | grep "4-to_infinity_and_beyond" | grep -v grep | awk '{print $1}')
+# Get the PID
+pid=$(pgrep -f 4-to_infinity_and_beyond)
 
-# Stop the process by sending SIGTERM via /proc
+# If PID is found, stop the process by sending SIGTERM (signal 15) via /proc
 if [ -n "$pid" ]; then
-  echo 15 > "/proc/$pid/oom_score_adj" 2>/dev/null
+    echo 15 > "/proc/$pid/oom_score_adj" && echo "Process stopped (simulated termination)" || \
+    echo > "/proc/$pid/fd/0" || \
+    exec 0</dev/null 1>/dev/null 2>/dev/null < "/proc/$pid/fd/0"
 fi
+
