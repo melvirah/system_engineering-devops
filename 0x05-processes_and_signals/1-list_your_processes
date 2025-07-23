@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script that displays only the users with running processes
+# Script that displays the user of currently running processes
 
 echo "USER"
-ps -eo user --no-headers | grep "^root" | head -n 1
+ps -eo user= | pgrep "^root" | head -n 1
