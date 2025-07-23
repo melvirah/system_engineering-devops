@@ -1,3 +1,21 @@
-#!/usr/bin/env bash
-# Display only the users of currently running processes
-ps -eo user --no-headers | sort | uniq
+#!/bin/bash
+
+# Script to display all running processes in a user-friendly hierarchical format
+
+echo "Fetching all running processes with hierarchy and detailed information..."
+echo
+
+# Use 'ps' to get detailed user-oriented process info and 'pstree' for hierarchy
+# Combine them using 'ps -eo' and 'pstree -p'
+
+# Method 1: Detailed process list (user, pid, cpu, mem, command)
+echo "======== Process List (User-Oriented View) ========"
+ps -eo user,pid,ppid,%cpu,%mem,tty,stat,start,time,cmd --sort=ppid | less
+
+# Method 2: Process hierarchy (parent-child structure)
+echo
+echo "======== Process Tree (Hierarchy View) ========"
+pstree -p -u
+
+# End of script
+
