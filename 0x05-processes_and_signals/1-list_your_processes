@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Lists only the processes started by real users with simplified output
+# Displays user-started processes in USER, TIME, and COMMAND format
 
-ps -eo user,time,comm --no-headers | grep -v '\['
-
+echo "USER       TIME     COMMAND"
+ps -eo user,time,comm --no-headers | grep -E -v "^\s*\[.*\]$"
