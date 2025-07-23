@@ -15,9 +15,9 @@
 #    art process tree, visually representing parent-child relationships
 #    using indentation.
 
-# Execute the ps command with the specified options.
+# Execute the ps command with the specified options to get the desired output.
 # - 'a': Show processes for all users.
 # - 'x': Show processes without a controlling tty.
-# - 'j': Jobs format.
-# - 'f': Forest format (ASCII art process tree).
+# - 'j': Use the "jobs" format, which includes USER, PID, %CPU, %MEM, VSZ, RSS, TTY, STAT, START, TIME, and COMMAND.
+# - 'f': Display the output in a "forest" format, showing process hierarchy using ASCII art.
 ps axjf
