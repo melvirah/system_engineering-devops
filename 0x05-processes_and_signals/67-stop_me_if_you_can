@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
+# This script sends SIGTERM to the 7-highlander process and prints OK
 
 pkill -f 7-highlander && echo "OK"
-
