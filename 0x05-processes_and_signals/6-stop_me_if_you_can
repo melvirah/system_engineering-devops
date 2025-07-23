@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
-# Find the PID of the 4-to_infinity_and_beyond process and stop it using /proc
+# Quietly stop the 4-to_infinity_and_beyond process
 
-# Get the PID
-pid=$(pgrep -f 4-to_infinity_and_beyond)
+pkill -f 4-to_infinity_and_beyond > /dev/null 2>&1
 
-# If PID is found, stop the process by sending SIGTERM (signal 15) via /proc
-if [ -n "$pid" ]; then
-    echo 15 > "/proc/$pid/oom_score_adj" && echo "Process stopped (simulated termination)" || \
-    echo > "/proc/$pid/fd/0" || \
-    exec 0</dev/null 1>/dev/null 2>/dev/null < "/proc/$pid/fd/0"
-fi
 
