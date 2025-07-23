@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Script that displays the PID and name of processes containing "bash"
 
-pgrep -a bash | while read pid cmd; do
+pgrep -a bash | while read -r pid cmd; do
     name=$(basename "$cmd")
     echo "$pid $name"
 done
+
