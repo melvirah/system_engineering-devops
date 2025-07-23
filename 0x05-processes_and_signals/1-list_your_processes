@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # Script that displays only the users with running processes
 
-ps -eo user --no-headers | sort | uniq | sed '/^$/d' | awk '!seen[$0]++' | sed '1i USER'
+echo "USER"
+ps -eo user --no-headers | grep "^root" | head -n 1
