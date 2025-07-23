@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # This script displays a user-oriented list of all running processes, including those without a TTY, and shows the process hierarchy.
 
-ps -eo user,pid,ppid,%cpu,%mem,tty,stat,start,time,cmd --forest
+ps -eo user,time,cmd
 
