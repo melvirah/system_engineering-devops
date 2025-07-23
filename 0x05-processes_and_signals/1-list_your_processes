@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Displays user-started processes in USER, TIME, and COMMAND format
+# Displays a list of users running processes
 
-echo "USER       TIME     COMMAND"
-ps -eo user,time,comm --no-headers | grep -E -v "^\s*\[.*\]$"
+echo "USER"
+ps -eo user= | sort | uniq
